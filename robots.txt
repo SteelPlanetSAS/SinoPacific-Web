@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.sinopacific.com.co/sitemap.xml
+
+Host: www.sinopacific.com.co

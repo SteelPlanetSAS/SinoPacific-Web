@@ -484,3 +484,22 @@
   .faq-item summary::after{content:'+';position:absolute;right:22px;top:50%;transform:translateY(-50%);font-size:1.5rem;line-height:1;color:var(--red)}
   .faq-item[open] summary::after{content:'\2212'}
   .faq-a{padding:0 22px 20px;color:var(--steel-dim);line-height:1.65}
+
+/* ── Ajuste de ritmo vertical en páginas interiores (15-09-2026) ──────────
+   El encabezado de la primera sección dejaba cerca de 290 px de vacío antes
+   del primer bloque de contenido. Se cierra ese espacio sin tocar el HTML.   */
+main > section.sec:first-child{padding-bottom:0}
+main > section.sec:first-child .sec-head{margin-bottom:0}
+main > section.sec:first-child + section.sec{padding-top:46px}
+@media (max-width:760px){
+  main > section.sec:first-child + section.sec{padding-top:30px}
+}
+
+/* ── Corrección de desborde horizontal en móvil (15-09-2026) ──────────────
+   El eyebrow con letra espaciada no permitía salto de línea y empujaba el
+   ancho del documento 9 px por fuera de la pantalla en las fichas de marca. */
+.eyebrow{flex-wrap:wrap;max-width:100%}
+@media (max-width:420px){
+  .eyebrow{letter-spacing:.22em;gap:.6em}
+  .eyebrow::before{width:20px}
+}
